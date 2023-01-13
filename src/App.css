@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+.header {
+    background-color: rgba(0, 10, 255, 0.06);;
+    padding: 24px 64px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+    margin: 30px auto;
+    max-width: 1000px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer {
+    display: none;
+    padding: 20px 64px;
+    background-color: rgba(0, 10, 255, 0.06);
+    text-transform: uppercase;
+    text-align: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
 
-.App-link {
-  color: #61dafb;
-}
+    .page {
+        padding-top: 100px;
+        padding-bottom: 70px;
+        display: table;
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .footer {
+        display: table-footer-group;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .footer:after {
+        counter-increment: page;
+        content: "Страница " counter(page) " из " counter(pages);
+    }
 }
