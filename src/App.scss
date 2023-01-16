@@ -1,0 +1,66 @@
+.header {
+    /*position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;*/
+    background-color: rgba(0, 10, 255, 0.06);
+    padding: 24px 64px;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.footer {
+    height: 50px;
+    padding: 0 64px;
+    background-color: rgba(0, 10, 255, 0.06);
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.page-number {
+    display: none;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    .page {
+        //padding-top: 100px;
+        //padding-bottom: 70px;
+        //display: table;
+    }
+
+    .page-number {
+        display: block;
+    }
+
+    /*a[href]:after {
+        content: " (" attr(href) ")";
+    }*/
+
+    /*.header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }*/
+
+    /*.footer {
+        display: table-footer-group;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }*/
+
+    .footer:after {
+        //counter-increment: page;
+        //content: "Страница " counter(page) " из " counter(pages);
+    }
+}
